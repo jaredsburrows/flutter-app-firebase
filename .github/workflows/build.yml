@@ -1,0 +1,81 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [ opened, labeled, unlabeled, synchronize ]
+
+env:
+  GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.configureondemand=true -Dkotlin.incremental=false -Dorg.gradle.jvmargs="-Xmx4g -Xms128m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 -XX:MaxMetaspaceSize=1024m"
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Project
+        uses: actions/checkout@v3.0.2
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1.0.4
+
+      - name: Cache Dependencies
+        uses: actions/cache@v3.0.2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper/
+            ~/.android/build-cache
+            /Users/runner/hostedtoolcache/flutter
+            /Users/runner/.pub-cache
+          key: ${{ runner.os }}-build
+          restore-keys: |
+            ${{ runner.os }}-build
+
+      - name: Configure JDK
+        uses: actions/setup-java@v3.3.0
+        with:
+          java-version: 11
+          distribution: temurin
+          cache: gradle
+      - run: java -version
+
+      - name: Configure Flutter
+        uses: subosito/flutter-action@v2.4.0
+        with:
+          channel: beta
+          cache: true
+      - run: |
+          flutter --version
+          flutter config --no-analytics
+
+      - name: Run Analyzer
+        run: |
+          flutter analyze
+
+      - name: Build Android
+        run: |
+          flutter build apk --debug
+#          flutter build apk --release --dart-define RELEASE=true --obfuscate --split-debug-info build/app/outputs/symbols-apk/ --target-platform android-arm64
+#          flutter build appbundle --release --dart-define RELEASE=true --obfuscate --split-debug-info build/app/outputs/symbols-appbundle --target-platform android-arm64
+
+      - name: Build iOS
+        run: |
+          flutter build ios --debug --no-codesign
+#          flutter build ios --release --dart-define RELEASE=true --obfuscate --split-debug-info build/ios/outputs/symbols --no-codesign
+
+      - name: Build Website
+        run: |
+          flutter build web --release --dart-define RELEASE=true --base-href /flutter-app-firebase/
+#          flutter build web --base-href /flutter-app-firebase/
+
+      - name: Publish Website
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          user_name: "Github Actions"
+          user_email: "action@github.com"
