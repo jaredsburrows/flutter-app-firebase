@@ -4,15 +4,15 @@
 [![build](https://github.com/jaredsburrows/flutter-app-firebase/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/jaredsburrows/flutter-app-firebase/actions/workflows/build.yml)
 [![Twitter Follow](https://img.shields.io/twitter/follow/jaredsburrows.svg?style=social)](https://twitter.com/jaredsburrows)
 
-## Feature + Plugins
+## Features + Plugins
 
 | Feature | Description |
 | -- | ------------- |
-| N/A | N/A |
+| Dark Mode | Light and Dark themes |
 
 | Plugin | Description |
 | -- | ------------- |
-| `url_strategy` | `fvm flutter pub add url_strategy` |
+| [url_strategy](https://pub.dev/packages/url_strategy) | `fvm flutter pub add url_strategy` |
 
 ## Setup Flutter
 
