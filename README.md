@@ -12,6 +12,7 @@
 
 | Plugin | Description |
 | -- | ------------- |
+| [firebase_core](https://pub.dev/packages/firebase_core) | `fvm flutter pub add firebase_core` |
 | [url_strategy](https://pub.dev/packages/url_strategy) | `fvm flutter pub add url_strategy` |
 
 ## Setup Flutter
