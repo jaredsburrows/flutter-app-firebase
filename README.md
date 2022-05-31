@@ -14,6 +14,7 @@
 | -- | ------------- |
 | [firebase_analytics](https://pub.dev/packages/firebase_analytics) | `fvm flutter pub add firebase_analytics` |
 | [firebase_core](https://pub.dev/packages/firebase_core) | `fvm flutter pub add firebase_core` |
+| [firebase_performance](https://pub.dev/packages/firebase_performance) | `fvm flutter pub add firebase_performance` |
 | [url_strategy](https://pub.dev/packages/url_strategy) | `fvm flutter pub add url_strategy` |
 
 ## Setup Flutter
