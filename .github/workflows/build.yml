@@ -26,7 +26,7 @@ jobs:
         with:
           path: |
             ~/.gradle/caches
-            ~/.gradle/wrapper/
+            ~/.gradle/wrapper
             ~/.android/build-cache
             ios/Pods
             /Users/runner/hostedtoolcache/flutter
@@ -51,10 +51,6 @@ jobs:
       - run: |
           flutter --version
           flutter config --no-analytics
-
-      - name: Run Analyzer
-        run: |
-          flutter analyze
 
       - name: Build Android
         run: |
