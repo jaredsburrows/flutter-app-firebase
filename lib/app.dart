@@ -1,7 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
-import 'home/home_page.dart';
+import 'auth_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -21,8 +21,7 @@ class App extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       navigatorObservers: <NavigatorObserver>[observer],
-      home: HomePage(
-        title: 'Home Page',
+      home: AuthGate(
         analytics: analytics,
         observer: observer,
       ),

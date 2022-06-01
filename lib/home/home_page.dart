@@ -1,4 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,6 +40,10 @@ class _HomePageState extends State<HomePage>
     });
 
     _sendAnalyticsEvent(_counter);
+  }
+
+  Future<void> _logOut() async {
+    await FirebaseAuth.instance.signOut();
   }
 
   Future<void> _sendAnalyticsEvent(int counter) async {
@@ -98,7 +103,7 @@ class _HomePageState extends State<HomePage>
               PopupMenuItem(
                 value: 0,
                 child: const Text("Log Out"),
-                onTap: () => throw Exception(),
+                onTap: () => _logOut,
               ),
             ],
           )

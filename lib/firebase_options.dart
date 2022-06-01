@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '587316204204',
     projectId: 'flutter-app-firebase-a46b2',
     storageBucket: 'flutter-app-firebase-a46b2.appspot.com',
-    iosClientId: '587316204204-tvdep6viq1nfa18bpsk81atl1e1aui4q.apps.googleusercontent.com',
+    iosClientId:
+        '587316204204-tvdep6viq1nfa18bpsk81atl1e1aui4q.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterAppFirebase',
   );
 }

@@ -13,6 +13,7 @@
 | Plugin | Description |
 | -- | ------------- |
 | [firebase_analytics](https://pub.dev/packages/firebase_analytics) | `fvm flutter pub add firebase_analytics` |
+| [firebase_auth](https://pub.dev/packages/firebase_auth) | `fvm flutter pub add firebase_auth` |
 | [firebase_core](https://pub.dev/packages/firebase_core) | `fvm flutter pub add firebase_core` |
 | [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics) | `fvm flutter pub add firebase_crashlytics` |
 | [firebase_performance](https://pub.dev/packages/firebase_performance) | `fvm flutter pub add firebase_performance` |
