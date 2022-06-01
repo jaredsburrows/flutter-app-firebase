@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,6 +24,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin, RouteAware {
   int _counter = 0;
+
+  @override
+  void initState() {
+    // // if (kIsWeb) {
+    // //   if (Platform.isAndroid) {
+    //     _showAndroidDownload(context);
+    //   // } else if (Platform.isIOS) {
+    //   //   _showiOSDownload(context);
+    //   // }
+    // // }
+    super.initState();
+  }
 
   @override
   void didChangeDependencies() {
@@ -91,8 +106,62 @@ class _HomePageState extends State<HomePage>
     );
   }
 
+  void _showiOSDownload(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(SnackBar(
+      content: const Text('Use the iOS App'),
+      duration: const Duration(days: 1),
+      action: SnackBarAction(
+        label: "Download",
+        onPressed: () {
+          // scaffold.hideCurrentSnackBar();
+        },
+      ),
+    ));
+  }
+
+  void _showAndroidDownload(BuildContext context) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(SnackBar(
+      content: const Text('Use the Android App'),
+      duration: const Duration(days: 1),
+      action: SnackBarAction(
+        label: "Download",
+        onPressed: () {
+          // scaffold.hideCurrentSnackBar();
+        },
+      ),
+    ));
+  }
+
   @override
   Widget build(BuildContext context) {
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    //   final snackBar = SnackBar(
+    //     content: const Text('Yay! A SnackBar!'),
+    //     action: SnackBarAction(
+    //       label: 'Undo',
+    //       onPressed: () {
+    //         // Some code to undo the change.
+    //       },
+    //     ),
+    //   );
+    //
+    //   // Find the ScaffoldMessenger in the widget tree
+    //   // and use it to show a SnackBar.
+    //   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    // });
+
+    // WidgetsBinding.instance.addPostFrameCallback((_) {
+    // // if (kIsWeb) {
+    //   if (Platform.isAndroid) {
+    // _showAndroidDownload(context);
+    // } else if (Platform.isIOS) {
+    // //   _showiOSDownload(context);
+    // }
+    // // }
+    // });
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
