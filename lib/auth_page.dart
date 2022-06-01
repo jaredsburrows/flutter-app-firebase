@@ -28,8 +28,11 @@ class AuthGate extends StatelessWidget {
           FirebaseAnalytics.instance.setUserId(id: uid);
         }
 
-        // User is not signed in
-        if (!snapshot.hasData) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          // handle loading
+          return const Center(child: CircularProgressIndicator());
+        } else if (!snapshot.hasData) {
+          // User is not signed in
           return SignInScreen(
             // sideBuilder: (context, constraints) {
             //   return Padding(
@@ -83,6 +86,10 @@ class AuthGate extends StatelessWidget {
               PhoneProviderConfiguration(),
             ],
           );
+        } else if (snapshot.hasError) {
+          // handle error (note: snapshot.error has type [Object?])
+          final error = snapshot.error!;
+          return Text(error.toString());
         }
 
         // Render your application if authenticated
