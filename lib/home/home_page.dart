@@ -98,6 +98,7 @@ class _HomePageState extends State<HomePage>
               PopupMenuItem(
                 value: 0,
                 child: const Text("Log Out"),
+                onTap: () => throw Exception(),
               ),
             ],
           )
