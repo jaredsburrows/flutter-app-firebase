@@ -21,14 +21,6 @@ class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin, RouteAware {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-
-    _sendAnalyticsEvent(_counter);
-  }
-
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -39,6 +31,14 @@ class _HomePageState extends State<HomePage>
   void dispose() {
     widget.observer.unsubscribe(this);
     super.dispose();
+  }
+
+  Future<void> _incrementCounter() async {
+    setState(() {
+      _counter++;
+    });
+
+    _sendAnalyticsEvent(_counter);
   }
 
   Future<void> _sendAnalyticsEvent(int counter) async {
@@ -53,12 +53,12 @@ class _HomePageState extends State<HomePage>
         // Only strings and numbers (ints & doubles) are supported for GA custom event parameters:
         // https://developers.google.com/analytics/devguides/collection/analyticsjs/custom-dims-mets#overview
         'bool': true.toString(),
-        'items': [itemCreator()]
+        'items': [_itemCreator()]
       },
     );
   }
 
-  AnalyticsEventItem itemCreator() {
+  AnalyticsEventItem _itemCreator() {
     return AnalyticsEventItem(
       affiliation: 'affil',
       coupon: 'coup',
@@ -91,6 +91,17 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(Icons.more_vert_rounded),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 0,
+                child: const Text("Log Out"),
+              ),
+            ],
+          )
+        ],
       ),
       body: Center(
         child: Column(
