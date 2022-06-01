@@ -17,6 +17,7 @@
 | [firebase_core](https://pub.dev/packages/firebase_core) | `fvm flutter pub add firebase_core` |
 | [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics) | `fvm flutter pub add firebase_crashlytics` |
 | [firebase_performance](https://pub.dev/packages/firebase_performance) | `fvm flutter pub add firebase_performance` |
+| [flutterfire_ui](https://pub.dev/packages/flutterfire_ui) | `fvm flutter pub add flutterfire_ui` |
 | [url_strategy](https://pub.dev/packages/url_strategy) | `fvm flutter pub add url_strategy` |
 
 ## Setup Flutter

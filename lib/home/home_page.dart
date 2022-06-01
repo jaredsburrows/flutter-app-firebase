@@ -96,16 +96,22 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        actions: [
+        actions: <Widget>[
           PopupMenuButton(
+            onSelected: (item) {
+              if (item == 0) {
+                _logOut();
+              }
+            },
             icon: const Icon(Icons.more_vert_rounded),
-            itemBuilder: (context) => [
-              PopupMenuItem(
-                value: 0,
-                child: const Text("Log Out"),
-                onTap: () => _logOut,
-              ),
-            ],
+            itemBuilder: (context) {
+              return [
+                const PopupMenuItem(
+                  value: 0,
+                  child: Text("Log Out"),
+                ),
+              ];
+            },
           )
         ],
       ),
