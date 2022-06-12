@@ -8,7 +8,9 @@
 
 | Feature | Description |
 | -- | ------------- |
-| Dark Mode | Light and Dark themes |
+| Home Page | Landing page, basic template example with floating action button |
+| Light/Dark Mode | Light and Dark themes |
+| Profile Page | Basic profile page |
 
 | Plugin | Description |
 | -- | ------------- |

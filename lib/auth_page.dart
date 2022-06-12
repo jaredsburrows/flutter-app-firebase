@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutterfire_ui/auth.dart';
 
-import 'home/home_page.dart';
+import 'main_page.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({
@@ -34,30 +34,30 @@ class AuthGate extends StatelessWidget {
         } else if (!snapshot.hasData) {
           // User is not signed in
           return SignInScreen(
-            // sideBuilder: (context, constraints) {
-            //   return Padding(
-            //     padding: const EdgeInsets.all(20),
-            //     child: AspectRatio(
-            //       aspectRatio: 1,
-            //       // https://toppng.com/free-image/our-specialists-are-using-technology-to-further-enhance-scan-qr-code-logo-PNG-free-PNG-Images_228323
-            //       child: Image.network(
-            //         'https://i.imgur.com/eg3nl4X.png',
-            //       ),
-            //     ),
-            //   );
-            // },
-            // headerBuilder: (context, constraints, _) {
-            //   return Padding(
-            //     padding: const EdgeInsets.all(20),
-            //     child: AspectRatio(
-            //       aspectRatio: 1,
-            //       // https://toppng.com/free-image/our-specialists-are-using-technology-to-further-enhance-scan-qr-code-logo-PNG-free-PNG-Images_228323
-            //       child: Image.network(
-            //         'https://i.imgur.com/eg3nl4X.png',
-            //       ),
-            //     ),
-            //   );
-            // },
+            sideBuilder: (context, constraints) {
+              return Padding(
+                padding: const EdgeInsets.all(20),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  // https://toppng.com/free-image/our-specialists-are-using-technology-to-further-enhance-scan-qr-code-logo-PNG-free-PNG-Images_228323
+                  child: Image.network(
+                    'https://i.imgur.com/eg3nl4X.png',
+                  ),
+                ),
+              );
+            },
+            headerBuilder: (context, constraints, _) {
+              return Padding(
+                padding: const EdgeInsets.all(20),
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  // https://toppng.com/free-image/our-specialists-are-using-technology-to-further-enhance-scan-qr-code-logo-PNG-free-PNG-Images_228323
+                  child: Image.network(
+                    'https://i.imgur.com/eg3nl4X.png',
+                  ),
+                ),
+              );
+            },
             // subtitleBuilder: (context, action) {
             //   return Padding(
             //     padding: const EdgeInsets.only(bottom: 8),
@@ -93,8 +93,7 @@ class AuthGate extends StatelessWidget {
         }
 
         // Render your application if authenticated
-        return HomePage(
-          title: 'Home Page',
+        return MainPage(
           analytics: analytics,
           observer: observer,
         );
