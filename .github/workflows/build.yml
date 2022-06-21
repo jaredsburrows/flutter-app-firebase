@@ -12,7 +12,14 @@ env:
 
 jobs:
   build:
+    name: JDK ${{ matrix.java-version }}
     runs-on: macos-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        java-version:
+          - 11
 
     steps:
       - name: Checkout Project
@@ -35,10 +42,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build
 
-      - name: Configure JDK
+      - name: Configure JDK ${{ matrix.java-version }}
         uses: actions/setup-java@v3.4.0
         with:
-          java-version: 11
+          java-version: ${{ matrix.java-version }}
           distribution: temurin
           cache: gradle
       - run: java -version
