@@ -51,7 +51,7 @@ jobs:
       - run: java -version
 
       - name: Configure Flutter
-        uses: subosito/flutter-action@v2.4.0
+        uses: subosito/flutter-action@v2.5.0
         with:
           channel: beta
           cache: true
