@@ -4,8 +4,8 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "71ac73fa4f805e188c772b185b44fadd",
-"index.html": "beabe4410f0fcc6bacb623d4f95bd6ab",
-"/": "beabe4410f0fcc6bacb623d4f95bd6ab",
+"index.html": "8ef63e7be2c925f3a2ec3984d8033e86",
+"/": "8ef63e7be2c925f3a2ec3984d8033e86",
 "main.dart.js": "d85fabdcb7a3dd7c972d5613aeda4841",
 "flutter.js": "f85e6fb278b0fd20c349186fb46ae36d",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
@@ -25,7 +25,7 @@ const RESOURCES = {
 "assets/packages/flutterfire_ui/assets/icons/twitter.svg": "6086e2aad26effea1344c8e118520e32",
 "assets/packages/flutterfire_ui/assets/icons/apple_dark.svg": "1b587ffd7d75c462847f8137a93f3161",
 "assets/packages/flutterfire_ui/assets/fonts/SocialIcons.ttf": "a1207fae1578da27a062cb73d424aed9",
-"assets/shaders/ink_sparkle.frag": "8305451507328e65d7f8420ee1d7449a",
+"assets/shaders/ink_sparkle.frag": "e93fe92c0430304643cc1c8bc0c5d655",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "canvaskit/canvaskit.js": "2bc454a691c631b07a9307ac4ca47797",
 "canvaskit/profiling/canvaskit.js": "38164e5a72bdad0faa4ce740c9b8e564",
