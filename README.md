@@ -14,27 +14,33 @@
 
 | Plugin | Description |
 | -- | ------------- |
-| [firebase_analytics](https://pub.dev/packages/firebase_analytics) | `fvm flutter pub add firebase_analytics` |
-| [firebase_auth](https://pub.dev/packages/firebase_auth) | `fvm flutter pub add firebase_auth` |
-| [firebase_core](https://pub.dev/packages/firebase_core) | `fvm flutter pub add firebase_core` |
-| [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics) | `fvm flutter pub add firebase_crashlytics` |
-| [firebase_performance](https://pub.dev/packages/firebase_performance) | `fvm flutter pub add firebase_performance` |
-| [flutterfire_ui](https://pub.dev/packages/flutterfire_ui) | `fvm flutter pub add flutterfire_ui` |
-| [url_strategy](https://pub.dev/packages/url_strategy) | `fvm flutter pub add url_strategy` |
+| [firebase_analytics](https://pub.dev/packages/firebase_analytics) | `flutter pub add firebase_analytics` |
+| [firebase_auth](https://pub.dev/packages/firebase_auth) | `flutter pub add firebase_auth` |
+| [firebase_core](https://pub.dev/packages/firebase_core) | `flutter pub add firebase_core` |
+| [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics) | `flutter pub add firebase_crashlytics` |
+| [firebase_performance](https://pub.dev/packages/firebase_performance) | `flutter pub add firebase_performance` |
+| [flutterfire_ui](https://pub.dev/packages/flutterfire_ui) | `flutter pub add flutterfire_ui` |
+| [url_strategy](https://pub.dev/packages/url_strategy) | `flutter pub add url_strategy` |
 
 ## Setup Flutter
 
 **Flutter**
 
 ```shell
-brew tap leoafarias/fvm
-brew install fvm
+flutter upgrade
+flutter pub get
+flutter pub upgrade --null-safety
+```
 
-fvm use beta
+**Build All**
 
-fvm flutter upgrade
-fvm flutter pub get
-fvm flutter pub upgrade --null-safety
+```shell
+flutter upgrade
+flutter pub get
+flutter pub upgrade --null-safety
+flutter build apk --debug
+flutter build ios --debug --no-codesign
+flutter build web
 ```
 
 ## Build the Android app
@@ -42,19 +48,19 @@ fvm flutter pub upgrade --null-safety
 **Debug**
 
 ```shell
-fvm flutter build apk --debug
+flutter build apk --debug
 ```
 
 **Release APK**
 
 ```shell
-fvm flutter build apk --release --obfuscate --split-debug-info build/app/outputs/symbols-apk/ --target-platform android-arm64
+flutter build apk --release --obfuscate --split-debug-info build/app/outputs/symbols-apk/ --target-platform android-arm64
 ```
 
 **Release Bundle**
 
 ```shell
-fvm flutter build appbundle --release --obfuscate --split-debug-info build/app/outputs/symbols-appbundle --target-platform android-arm64
+flutter build appbundle --release --obfuscate --split-debug-info build/app/outputs/symbols-appbundle --target-platform android-arm64
 ```
 
 ## Build the iOS app
@@ -62,13 +68,13 @@ fvm flutter build appbundle --release --obfuscate --split-debug-info build/app/o
 **Debug**
 
 ```shell
-fvm flutter build ios --debug --no-codesign
+flutter build ios --debug --no-codesign
 ```
 
 **Release**
 
 ```shell
-fvm flutter build ios --release --obfuscate --split-debug-info build/ios/outputs/symbols
+flutter build ios --release --obfuscate --split-debug-info build/ios/outputs/symbols
 ```
 
 ## Build the Web app
@@ -76,7 +82,7 @@ fvm flutter build ios --release --obfuscate --split-debug-info build/ios/outputs
 **Debug/Release**
 
 ```shell
-fvm flutter build web
+flutter build web
 ```
 
 ## Testing
@@ -84,7 +90,7 @@ fvm flutter build web
 **Run unit tests with coverage**
 
 ```shell
-fvm flutter test --coverage
+flutter test --coverage
 ```
 
 ## Reports
@@ -92,7 +98,7 @@ fvm flutter test --coverage
 **Run analyzer**
 
 ```shell
-fvm flutter analyze
+flutter analyze
 ```
 
 ## License
