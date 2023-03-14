@@ -36,6 +36,7 @@ jobs:
             ~/.gradle/wrapper
             ~/.android/build-cache
             ios/Pods
+            /opt/hostedtoolcache/flutter
             /Users/runner/hostedtoolcache/flutter
             /Users/runner/.pub-cache
           key: ${{ runner.os }}-build
@@ -49,6 +50,9 @@ jobs:
           distribution: temurin
           cache: gradle
       - run: java -version
+
+      - name: Run Build
+        uses: gradle/gradle-build-action@v2
 
       - name: Configure Flutter
         uses: subosito/flutter-action@v2.8.0
@@ -76,7 +80,7 @@ jobs:
 #          flutter build web --base-href /flutter-app-firebase/
 
       - name: Publish Website
-        if: github.ref == 'refs/heads/main'
+        if: github.repository == 'jaredsburrows/flutter-app-firebase' && github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
