@@ -58,24 +58,16 @@ jobs:
         with:
           channel: stable
           cache: true
-      - run: |
-          flutter config --no-analytics
+      - run: flutter config --no-analytics
 
       - name: Build Android
-        run: |
-          flutter build apk --debug
-#          flutter build apk --release --obfuscate --split-debug-info build/app/outputs/symbols-apk/ --target-platform android-arm64
-#          flutter build appbundle --release --obfuscate --split-debug-info build/app/outputs/symbols-appbundle --target-platform android-arm64
+        run: flutter build apk --debug
 
       - name: Build iOS
-        run: |
-          flutter build ios --debug --no-codesign
-#          flutter build ios --release --obfuscate --split-debug-info build/ios/outputs/symbols --no-codesign
+        run: flutter build ios --debug --no-codesign
 
       - name: Build Website
-        run: |
-          flutter build web --release --base-href /flutter-app-firebase/
-#          flutter build web --base-href /flutter-app-firebase/
+        run: flutter build web --base-href /flutter-app-firebase/
 
       - name: Publish Website
         if: github.repository == 'jaredsburrows/flutter-app-firebase' && github.ref == 'refs/heads/main'
