@@ -37,7 +37,7 @@ dependencies:
   firebase_auth: ^4.3.0
   firebase_core: ^2.8.0
   firebase_crashlytics: ^3.0.17
-  firebase_performance: ^0.9.0+16
+  firebase_performance: ^0.9.1
   flutterfire_ui: ^0.4.3+20
   url_strategy: ^0.2.0
 
