@@ -22,11 +22,13 @@
 | [flutterfire_ui](https://pub.dev/packages/flutterfire_ui) | `flutter pub add flutterfire_ui` |
 | [url_strategy](https://pub.dev/packages/url_strategy) | `flutter pub add url_strategy` |
 
-## Setup Flutter
+## Setup
 
 **Flutter**
 
 ```shell
+rm pubspec.lock
+rm ios/Podfile.lock
 flutter upgrade
 flutter pub get
 flutter pub upgrade --null-safety
