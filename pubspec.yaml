@@ -35,7 +35,7 @@ dependencies:
   cupertino_icons: ^1.0.5
   firebase_analytics: ^10.3.0
   firebase_auth: ^4.5.0
-  firebase_core: ^2.11.0
+  firebase_core: ^2.21.0
   firebase_crashlytics: ^3.2.0
   firebase_performance: ^0.9.1+2
   flutterfire_ui: ^0.4.3+20
