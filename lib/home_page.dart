@@ -4,10 +4,10 @@ import 'package:flutter_app_firebase/page_info.dart';
 
 class HomePage extends StatefulWidget implements PageInfo {
   const HomePage({
-    Key? key,
+    super.key,
     required this.analytics,
     required this.observer,
-  }) : super(key: key);
+  });
 
   final FirebaseAnalytics analytics;
   final FirebaseAnalyticsObserver observer;

@@ -8,12 +8,11 @@ const placeholderImage =
     'https://upload.wikimedia.org/wikipedia/commons/c/cd/Portrait_Placeholder_Square.png';
 
 class ProfilePage extends StatefulWidget implements PageInfo {
-  // ignore: public_member_api_docs
   const ProfilePage({
-    Key? key,
+    super.key,
     required this.analytics,
     required this.observer,
-  }) : super(key: key);
+  });
 
   final FirebaseAnalytics analytics;
   final FirebaseAnalyticsObserver observer;
@@ -233,11 +232,5 @@ class _ProfilePageState extends State<ProfilePage> {
     );
 
     return photoURL;
-  }
-
-  /// Example code for sign out.
-  Future<void> _signOut() async {
-    await FirebaseAuth.instance.signOut();
-    // await GoogleSignIn().signOut();
   }
 }

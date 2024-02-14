@@ -7,10 +7,10 @@ import 'main_page.dart';
 
 class AuthGate extends StatelessWidget {
   const AuthGate({
-    Key? key,
+    super.key,
     required this.analytics,
     required this.observer,
-  }) : super(key: key);
+  });
 
   final FirebaseAnalytics analytics;
   final FirebaseAnalyticsObserver observer;
