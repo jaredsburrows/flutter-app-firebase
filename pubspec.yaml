@@ -27,7 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  firebase_analytics: ^10.8.5 # https://pub.dev/packages/firebase_analytics
+  firebase_analytics: ^10.8.7 # https://pub.dev/packages/firebase_analytics
   firebase_auth: ^4.17.4 # https://pub.dev/packages/firebase_auth
   firebase_core: ^2.25.4 # https://pub.dev/packages/firebase_core
   firebase_crashlytics: ^3.4.14 # https://pub.dev/packages/firebase_crashlytics # TODO: not on web?
