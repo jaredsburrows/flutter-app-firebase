@@ -29,7 +29,7 @@ environment:
 dependencies:
   firebase_analytics: ^10.8.5 # https://pub.dev/packages/firebase_analytics
   firebase_auth: ^4.17.4 # https://pub.dev/packages/firebase_auth
-  firebase_core: ^2.25.4 # https://pub.dev/packages/firebase_core
+  firebase_core: ^2.27.1 # https://pub.dev/packages/firebase_core
   firebase_crashlytics: ^3.4.14 # https://pub.dev/packages/firebase_crashlytics # TODO: not on web?
   firebase_performance: ^0.9.3+13 # https://pub.dev/packages/firebase_performance # TODO: not on web?
   flutter: # https://docs.flutter.dev/
